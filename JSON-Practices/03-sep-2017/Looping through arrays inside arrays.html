@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Looping through arrays inside arrays</title>
+</head>
+
+<body>
+    <h2>Looping through arrays inside arrays</h2>
+    <p id="demo"></p>
+    <script>
+    'use strict'
+    var i,j,x = " ";
+    var school = {
+        'schoolName': 'G.B.H.S.S',
+        'place': 'UK',
+        'class': [{ 'STD': '10th', 'name': ['prakash', 'murali', 'madhu'] },
+            { 'STD': '11th', 'name': ['babu', 'naresh', 'udhaya'] },
+            { 'STD': '12th', 'name': ['abi', 'ramya', 'ram'] }
+        ]
+    }
+    for ( i in school.class) {
+        x += "<h2>" + school.class[i].STD + "</h2>" + "<br>";
+        for (j in school.class[i].name) {
+            x += school.class[i].name[j] + "<br>"
+        }
+    }
+    document.getElementById('demo').innerHTML = x;
+    </script>
+</body>
+
+</html>

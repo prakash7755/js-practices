@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title> access nested JSON objects</title>
+</head>
+<body>
+<h2> access nested JSON objects</h2>
+<p id="demo"> Get Highest Mark <br> </p>
+<script>
+'use strict'
+	var student = {"name" : "Prakash R" , "std" : "10th"}; 
+	var marks = {"tamil" : 193 , "english" : 187 , "math" : 200};
+	var studentDetail = {student, marks};
+	var getHightMark = studentDetail.marks.math;
+	document.getElementById('demo').innerHTML = getOneSubMark;
+  </script>
+
+</body>
+</html>

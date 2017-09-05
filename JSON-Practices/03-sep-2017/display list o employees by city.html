@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>display list of employees by city</title>
+</head>
+
+<body>
+    <h2>display list of employees by city</h2>
+    <p id="demo"></p>
+    <script>
+    'use strict'
+    var i, j, x = " "
+    var city_wise_employee = {
+        'company': [{
+                'city': 'chennai',
+                'company_name': 'TCS',
+                'employees': ['prakash', 'murali', 'udhaya']
+            },
+            {
+                'city': 'mumbai',
+                'company_name': 'HCL',
+                'employees': ['rajesh', 'ramu', 'ravi']
+            },
+            {
+                'city': 'bangalore',
+                'company_name': 'IBM',
+                'employees': ['madhu', 'babu', 'hari']
+            }
+        ]
+
+    };
+
+    for (i in city_wise_employee.company) {
+    	x += "<h2>" + city_wise_employee.company[i].company_name + "</h2>" ;
+        x += "<h1>" + city_wise_employee.company[i].city + "</h1>"  ;
+        for (j in city_wise_employee.company[i].employees) {
+            x += city_wise_employee.company[i].employees[j] + "<br>";
+        }
+    }
+    document.getElementById('demo').innerHTML = x;
+    </script>
+</body>
+
+</html>

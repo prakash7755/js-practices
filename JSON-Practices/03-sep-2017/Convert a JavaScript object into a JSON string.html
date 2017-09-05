@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Convert a string written in JSON format</title>
+</head>
+<body>
+<h2> Convert a string written in JSON format </h2>
+<p id="demo"></p>
+<p id="obj"></p>
+<p id="obj1"></p>
+<script>
+'use strict'
+    // JSON Format String 
+	var  employees = '{"firstName" : "Udhaya" , "lastName" : " V.S" , "city" : "UK"}';
+	// Normal JavaScript Object
+	var  employees_Obj = {"firstName" : "Udhaya" , "lastName" : " V.S" , "city" : "UK"};
+	// JSON String Convert To Object
+	var obj = JSON.parse(employees);
+    document.getElementById('demo').innerHTML = employees_Obj.firstName;
+    document.getElementById('obj').innerHTML = employees_Obj["firstName"];
+    document.getElementById('obj1').innerHTML = obj.firstName;
+	</script>
+
+</body>
+</html>
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Two JSON Values Compare</title>
+</head>
+
+<body>
+    <h2>Two JSON Array Values Compare</h2>
+    <p id="demo"></p>
+    <script>
+    'use strict'
+    var country = {
+        "countries": [
+            "US",
+            "India",
+            "China",
+            "Japan"
+        ]
+    }
+
+
+    var perCountries = {
+        "permittedCountries": [
+            "US",
+            "India"
+        ]
+    }
+    var nonCountry;
+    var countries = country.countries;
+    var perCountries = perCountries.permittedCountries;
+    countries.forEach(function(nonCountry, index) {
+        if (perCountries.indexOf(nonCountry) === 1) {
+            return nonCountry;
+        }
+
+        console.log(nonCountry);
+        document.getElementById('demo').innerHTML = nonCountry;
+    })
+    </script>
+</body>
+
+</html>

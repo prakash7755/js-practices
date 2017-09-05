@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title> delete properties from a JSON object </title>
+</head>
+
+<body>
+    <h2>delete properties from a JSON object</h2>
+    <p id="befDel">Before Delete Process Result <br> </p>
+    <!-- <p id="del"> One Subject Delete <br> </p> -->
+    <p id="afDel">After Delete Process Result <br> </p> 
+    <script>
+    var student = { "name": "Prakash R", "std": "10th" };
+    var marks = { "tamil": 193, "english": 187, "math": 200 };
+    var studentDetail = { student, marks };
+    for (x in marks) {
+        document.getElementById('befDel').innerHTML += x + ':' + marks[x] + "<br>";
+    }
+    var deleteInOneSub = delete studentDetail.marks.english;
+    // document.getElementById('del').innerHTML = deleteInOneSub;
+    for (x in marks) {
+        document.getElementById('afDel').innerHTML += x + ':' + marks[x] + "<br>";
+    }
+    </script>
+</body>
+
+</html>
