@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>State Wise Employees</title>
+</head>
+<body>
+<h2>State Wise Employees</h2>
+<p id="demo"> JavaScript Using Print In State Wise Employeees</p>
+<p id="under">Underscore Using Print In State Wise Employeees</p>
+<script>
+'use strict'
+// var _ = require('underscore-node');
+var employee = {
+	"permittedCountries": [
+		{
+			"employeeId": "1",
+			"employeeAddress": {
+				"city": "Bangalore",
+				"state": "Karnataka"
+			}
+		},
+		{
+			"employeeId": "2",
+			"employeeAddress": {
+				"city": "Chennai",
+				"state": "TamilNadu"
+			}
+		},
+		{
+			"employeeId": "4",
+			"employeeAddress": {
+				"city": "Bangalore",
+				"state": "Karnataka"
+			}
+		},
+		{
+			"employeeId": "5",
+			"employeeAddress": {
+				"city": "Chennai",
+				"state": "TamilNadu"
+			}
+		}
+	]
+};
+
+let countries = employee.permittedCountries;
+countries.sort((a, b) => ((a.employeeAddress.state === b.employeeAddress.state) ? 0 : ((a.employeeAddress.state < b.employeeAddress.state) ? 1 : -1)));
+console.log(countries)
+document.getElementById('demo').innerHTML = countries
+// let state = _.sortBy(countries, x => x.employeeAddress.state);
+// state.reverse();
+// console.log(state)
+
+
+</script>
+
+</body>
+</html>

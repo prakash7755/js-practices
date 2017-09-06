@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Looping through an array using a for in loop</title>
+</head>
+<body>
+<h2>Looping through an array using a for in loop</h2>
+<p id="demo"></p>
+<script>
+'use strict'
+var x;
+	var school = {"class": "10th",
+	 "section": "b",
+	 "studentNames": ["prakash","udhaya","madhu"]};
+	 for ( x in school.studentNames){
+	 	document.getElementById('demo').innerHTML += school.studentNames[x] + '<br>';
+	 }
+
+</script>
+
+</body>
+</html>
+

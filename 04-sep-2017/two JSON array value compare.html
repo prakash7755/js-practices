@@ -27,16 +27,16 @@
             "India"
         ]
     }
-    
+    var nonCountry;
     var countries = country.countries;
     var perCountries = perCountries.permittedCountries;
-    countries.filter(function(nonPerCountry, index) {
-        if (perCountries.indexOf(nonPerCountry) < 0) {
-           console.log(nonPerCountry);
-           document.getElementById('demo').innerHTML = nonPerCountry;
-
+    countries.forEach(function(nonCountry, index) {
+        if (perCountries.indexOf(nonCountry) === 1) {
+            return nonCountry;
         }
-       
+
+        console.log(nonCountry);
+        document.getElementById('demo').innerHTML = nonCountry;
     })
     </script>
 </body>

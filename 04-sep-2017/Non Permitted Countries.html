@@ -30,10 +30,9 @@
     
     var countries = country.countries;
     var perCountries = perCountries.permittedCountries;
-    countries.filter(function(nonPerCountry, index) {
-        if (perCountries.indexOf(nonPerCountry) < 0) {
-           console.log(nonPerCountry);
-           document.getElementById('demo').innerHTML = nonPerCountry;
+    countries.filter(function(nonCountry, index) {
+        if (perCountries.indexOf(nonCountry) < 0) {
+           console.log(nonCountry);
 
         }
        

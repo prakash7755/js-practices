@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>loop through all properties in a JSON object</title>
+</head>
+<body>
+<h2>loop through all properties in a JSON object</h2>
+<p id="demo"></p>
+<script>
+'use strict'
+	var  employees = {"firstName" : "Udhaya" , "lastName" : " V.S" , "city" : "UK"};
+  for (x in employees) {
+  	document.getElementById('demo').innerHTML += x + " : " + employees[x] +"<br>";
+  }
+
+</script>
+</body>
+</html>
+
+
+

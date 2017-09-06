@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title> Create Object from JSON String </title>
+</head>
+<body>
+<h2> Create Object from JSON String </h2>
+<p id="demo"></p>
+<script>
+'use strict'
+	var company = '{"employees":['+
+	'{"firstName" : "Prakash", "lastName" : "R"},'+
+	'{"firstName" : "murali" , "lastName" : "V.S"},'+
+	'{"firstName" : "kalpana" , "lastName" : "M"} ]}'
+	obj = JSON.parse(company);
+	document.getElementById('demo').innerHTML =
+	obj.employees[1].firstName + " " + obj.employees[1].lastName
+	
+</script>
+
+</body>
+</html>

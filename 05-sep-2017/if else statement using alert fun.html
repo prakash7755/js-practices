@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Select Ice Cream</title>
+</head>
+
+<body>
+    <h2> Select Ice Cream</h2>
+    <p id="demo"></p>
+    <form onsubmit="iceCream()" id="ice">
+        <input type="text" name='text' placeholder="Enter Ice Cream Name">
+        <input type="submit" value="submit">
+    </form>
+    <script>
+    'use strict'
+
+    function iceCream() {
+        var ice1 = document.getElementById('ice');
+        var ice_cream = ice1[0].value;
+        var result;
+        if (ice_cream === 'vanila') {
+            result = alert('Yay, I love vanila ice cream!');
+        } else {
+            result = alert( 'Awwww, but vanila is my favorite...');
+        }
+        document.getElementById("demo").innerHTML = result;
+    }
+    </script>
+</body>
+
+</html>
