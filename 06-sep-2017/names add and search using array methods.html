@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Search in name</title>
+</head>
+
+<body>
+    <h2>Search Names</h2>
+    <p id="demo"></p>
+    <form id='name' onsubmit="myFunction(); return false;">
+        <br>
+        <input type='text' name='text' placeholder="Enter Name">
+        <button type="submit">Try it</button>
+        <br>
+        <input autofocus type="text" name="text" id="key" placeholder="Search Names" oninput="searchKey(event)" list="colors">
+    </form>
+    <datalist id="colors">
+    </datalist>
+    <script>
+    'use strict'
+    // Add names Using Push Method
+    var names = ['prakash', 'udhaya', 'madhu', 'ravi', 'raju'];
+    var names = document.getElementById("name");
+
+    function myFunction() {
+        var user = names[0].value;
+        names.push(user);
+    }
+
+
+    // Search Names Using Fillter And Index Method 
+    var inputKey = document.getElementById('key');
+    var dt = document.getElementById('colors');
+
+    function searchKey(event) {
+        dt.innerHTML = '';
+        var value = inputKey.value;
+        var results = names.filter(function(el) {
+            return el.toLowerCase().indexOf(value.toLowerCase()) > -1
+        });
+
+        results.forEach(function(text) {
+            var op = document.createElement('OPTION');
+            op.value = text;
+            dt.appendChild(op);
+        })
+    }
+    </script>
+</body>
+
+</html>
