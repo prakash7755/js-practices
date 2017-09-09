@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Search Qut</title>
+</head>
+
+<body>
+    <h2> Give Fruit Name And Get Quantity </h2>
+    <p id="demo"> Here Only Three Fruits Available</p>
+    <form id="fruits">
+        <input type="text" name="text" placeholder="apples,bananas,cherries">
+        <button type="submit" value="submit"> submit </button>
+    </form>
+    <script>
+    'use strict'
+    var inventory = [
+        { name: 'apples', quantity: 2 },
+        { name: 'bananas', quantity: 0 },
+        { name: 'cherries', quantity: 5 }
+    ];
+    var elFruit = document.getElementById('fruits');
+    elFruit.addEventListener('submit', alertFunctions); 
+
+    elFruit.addEventListener('submit', myFunction);
+    function alertFunctions(event) {
+    	alert('Hi Welcome');
+        elFruit.removeEventListener('submit', alertFunctions);
+    }
+
+
+    function myFunction(event) {
+    	event.preventDefault()
+    	document.getElementById('demo').innerHTML = "";
+        var fruitName = elFruit[0].value;
+        var fruit = inventory.find(function(fruit) {
+            return (fruit.name === fruitName);
+        });
+        document.getElementById('demo').innerHTML = '<b>' + fruitName + ' ' + fruit.quantity + "</b>";
+    }
+    </script>
+</body>
+
+</html>
