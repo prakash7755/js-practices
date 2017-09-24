@@ -27,17 +27,17 @@
             "India"
         ]
     }
-    
+
     var countries = country.countries;
     var perCountries = perCountries.permittedCountries;
-    countries.filter(function(nonCountry, index) {
-        if (perCountries.indexOf(nonCountry) < 0) {
-           console.log(nonCountry);
+    function differenceName(name) {
+        return perCountries.indexOf(name) === -1
+    }
 
-        }
-       
-    })
+    const result_N = countries.filter(differenceName)
+    document.getElementById('demo').innerHTML = JSON.stringify(result_N);
+
+
+    // }
     </script>
 </body>
-
-</html>

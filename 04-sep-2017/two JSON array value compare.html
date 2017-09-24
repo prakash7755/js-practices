@@ -30,13 +30,13 @@
     var nonCountry;
     var countries = country.countries;
     var perCountries = perCountries.permittedCountries;
-    countries.forEach(function(nonCountry, index) {
+    countries.filter(function(nonCountry, index) {
         if (perCountries.indexOf(nonCountry) === 1) {
-            return nonCountry;
+         nonCountry;
+        console.log(nonCountry);
+         document.getElementById('demo').innerHTML = JSON.stringify(nonCountry);
         }
 
-        console.log(nonCountry);
-        document.getElementById('demo').innerHTML = nonCountry;
     })
     </script>
 </body>

@@ -1,9 +1,12 @@
 var express = require('express');
+var base64Img = require('base64-img');
 var app = express();
 var multer  = require('multer');
 var upload = multer({ dest: 'uploads/' });
 var router = express.Router();
 var path = require('path');
+
+var data = base64Img.base64Sync('upload/file');
 
 
 
