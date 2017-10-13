@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Count Blur Using Jquery</title>
+</head>
+
+<body>
+    <input type="text" value="0" name="product1" class="num" />
+    <input type="text" value="0" name="product2" class="num" />
+    <input type="text" value="0" name="product3" class="num" />
+    <input type="text" value="0" name="cost" class="cost" />
+</body>
+<script>
+$(document).ready(function() {
+$('.num').live("blur", function(){
+        var parentLI = $(this).closest("LI");
+        var cost = 0;
+        $(".num", parentLI).each(function() {
+            var value = $(this).val();
+            if (!isNaN(value) && value != "")
+                cost+= parseFloat(value);
+        })
+        $('.cost').val(cost);
+    });
+})
+</script>
+
+</html>

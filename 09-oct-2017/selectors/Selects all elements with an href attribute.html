@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Selects all elements with an href attribute</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+	<p>Here Click Get The Google Web Side</p>
+	<p><a href="https://www.google.co.in/"> Google</a></p>
+	<p>Here Click Get The W3school Web Side</p>
+	<p><a href="https://www.w3schools.com/"> W3school</a></p>
+	<button>Hide</button>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("[href]").toggle(3000)
+			})
+		})
+	</script>
+</body>
+</html>

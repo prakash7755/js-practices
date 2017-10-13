@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HTML Element Select Using JQuery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+
+<h2>HTML Element Select Using JQuery</h2>
+<p>Click Here To Hide</p>
+<p>Click Here To Fade</p>
+<script>
+	$(document).ready(function(){
+		$("p").click(function(){
+			$(this).toggle(1000, function(){
+				alert('Hai Nudge Me')
+			});
+		})
+	})
+</script>
+</body>
+</html>
