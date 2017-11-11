@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Display Using Ellipse Only 35 Charaters</title>
+    <style type="text/css">
+    .myClass {
+        background-color: yellow;
+    }
+
+    #ex1Modified {
+        color: #00ff00;
+    }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <body>
+        <input type="text" id="val" placeholder="Enter The Search word">
+        <button onclick="myFunction()">Search</button>
+        <br>
+        <br>
+        <h2 id="ex2"></h2>
+        <div id="ex1Modified"></div>
+        <p id="ex1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam pellentesque luctus semper. Suspendisse massa mi, scelerisque et consectetur id, faucibus congue sapien. Mauris eu interdum tellus. Quisque et varius nisi. Aenean vel neque ut eros maximus blandit ut ut sapien. Duis sit amet pellentesque neque. Fusce sem enim, volutpat pulvinar erat eget, porttitor rutrum est. Pellentesque fringilla dictum mi vel pretium. Morbi gravida placerat semper. Pellentesque at risus nec felis pulvinar iaculis sit amet vitae mauris. Sed vitae sollicitudin mi. Nulla rhoncus tempus tortor, ut imperdiet est semper et.
+            <br>
+            <br> Cras lectus augue, accumsan nec sem non, gravida fermentum est. Cras quis ipsum non mauris condimentum posuere. Aliquam et auctor eros. Quisque rhoncus rutrum nisl, eget mattis odio pretium ac. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed vel quam mi. In elementum quis lacus nec placerat. Sed tincidunt arcu bibendum lacus ultricies, vel ullamcorper lectus finibus. Phasellus luctus elit sapien, a sagittis erat ultricies sit amet. Sed ante diam, lacinia eget aliquet lacinia, porta eget justo. Sed sit amet nunc finibus, placerat augue a, finibus purus. Proin purus est, tincidunt vitae dui et, suscipit venenatis lectus. Nullam eget ligula pharetra, suscipit odio vitae, vehicula ex.
+            <br>
+            <br> Nulla malesuada aliquet nisi, ac dapibus tortor aliquet a. Vestibulum dapibus purus velit. Proin non sapien vel tortor malesuada fringilla. Donec eu sollicitudin purus, ut ultricies justo. Nullam pretium nisi ante, ac tristique nisl egestas eu. Aliquam volutpat tempor iaculis. Praesent vitae nibh eget dui luctus sollicitudin vel et dolor. Mauris rutrum sagittis leo vel consequat. Nullam tempor risus sem, vel mollis orci ultrices a. Nam sodales feugiat velit, a consectetur leo dignissim id.
+            <br>
+            <br> Mauris vestibulum laoreet lectus non venenatis. Aliquam rutrum eros neque, sit amet consectetur ligula semper ut. Curabitur vehicula viverra rhoncus. Mauris ut nulla velit. Ut ullamcorper magna sit amet placerat scelerisque. Praesent maximus, nisl fermentum pharetra sagittis, ante urna ultricies nisi, quis condimentum lacus mi a erat. Suspendisse sollicitudin, ipsum in ultrices consectetur, mi lacus pretium augue, et porttitor risus mauris vel nunc. Sed luctus in leo a mollis. Donec fringilla pellentesque nisi, at faucibus mi. Integer sed lacus et arcu egestas iaculis at at metus. Mauris in arcu et libero viverra posuere vel vitae est. Nam vitae est et dolor aliquam placerat quis quis sapien.</p>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("input").blur(function() {
+                $("p").hide()
+                $(".myClass").remove()
+                $("h2").empty()
+            });
+            $("input").click(function(){
+                $("p").show()
+            });
+        });
+
+
+        function myFunction() { 
+            var text = document.getElementById("val");
+            var word = text.value;
+            function prepareText(text) {
+                var returnString = text;
+                var wordLimit = 1;
+                if (word.length > wordLimit) {
+                    var getWord = [0]
+                    for (let i = 0; i < getWord.length; i++) {
+                        if (getWord[i] !== -1) {
+                            var indexValue = text.indexOf(word, getWord[i] + 1)
+                            getWord.push(indexValue)
+                        }
+                    }
+
+
+
+                    var value = []
+                    for (let j = 0; j < getWord.length - 1; j++) {
+                        var startWord = text.slice(getWord[j] - 30, getWord[j]);
+                        var ellipsis = "...";
+                        var lastWord = text.slice(getWord[j], getWord[j] + 40)
+                        returnString = ellipsis + startWord + lastWord + ellipsis;
+                        value.push(returnString)
+                        $("h2").append(value[j]);
+                    }
+                    return returnString;
+                }
+            }
+
+            prepareText($('p').text());
+
+
+
+             function hiliter(word, element) {
+                var rgxp = new RegExp("\\b" + word + "\\b", 'gi');
+                var repl = '<span class="myClass">' + word + '</span>';
+                element.innerHTML = element.innerHTML.replace(rgxp, repl);
+            };
+
+            hiliter(word, document.getElementById('ex2'));
+        };
+        </script>
+    </body>
+
+</html>
